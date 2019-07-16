@@ -1,16 +1,19 @@
 {
   "name": "simple-electron-app",
   "version": "0.0.0",
+  "main": "main.js",
+  "private": true,
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "electron:linux": "npm run build:prod && electron-builder build --linux",
+    "start": "ng build --base-href ./ && electron .",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
-  },
-  "private": true,
-  "dependencies": {
+    "e2e": "ng e2e",
+    "start-electron": "ng build --base-href ./ && electron ."
+  }, 
+  "dependencies": {  
     "@angular/animations": "~7.2.0",
     "@angular/common": "~7.2.0",
     "@angular/compiler": "~7.2.0",
